@@ -130,3 +130,26 @@ weather_df %>%
     ## Warning: Removed 15 rows containing missing values (geom_point).
 
 ![](Visualization-II_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+## Themes
+
+``` r
+weather_df %>% 
+  ggplot(aes(x = tmin, y = tmax, color = name)) +
+  geom_point(alpha = .5) +
+  labs(
+    title = "Temperature plot",
+    x = "Minimum daily temperature (C)",
+    y = "Maximum daily temperature(C)",
+    caption = "Data from rnoa package; temperatures in 2017."
+  ) +
+  viridis::scale_color_viridis(
+    name = "Location",
+    discrete = TRUE) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+    ## Warning: Removed 15 rows containing missing values (geom_point).
+
+![](Visualization-II_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
