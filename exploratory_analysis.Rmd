@@ -143,3 +143,12 @@ weather_df %>%
   knitr::kable(digits = 1)
 ```
 
+## `group by` and `mutate`
+```{r}
+weather_df %>% 
+  group_by(name) %>% 
+  mutate(
+    mean_tmax = mean(tmax, no.rm = TRUE)
+  )
+```
+
